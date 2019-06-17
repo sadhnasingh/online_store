@@ -4,7 +4,7 @@
        <div id="content">
         <div class="col-md-12">
     <div class="grid_6">
-      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, html: { class: "registed"}) do |f| %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put , class: "registed"}) do |f| %>
         <h2>Change your password</h2>
         <%= f.hidden_field :reset_password_token %>
          <div class="password">
