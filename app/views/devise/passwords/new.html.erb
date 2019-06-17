@@ -1,0 +1,23 @@
+<div class="clear"></div>
+  <section id="main" class="login entire_width">
+    <div class="container_12">      
+       <div id="content">
+       	<div class="col-md-12">
+    <div class="grid_6">
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }, html: { class: "registed"}) do |f| %>
+        <h2>Forgot your password?</h2>
+        <div class="email">
+          <strong>Email Adress:</strong><sup class="surely">*</sup><br/>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div><!-- .email -->
+        <div class="reset">                    
+          <%= f.submit "Send me reset password instructions" %>
+        </div><!-- .submit -->
+      <% end%>
+                </div><!-- .grid_6 -->
+       </div><!-- #content -->
+       </div>
+      <div class="clear"></div>
+    </div><!-- .container_12 -->
+  </section><!-- #main -->
+  

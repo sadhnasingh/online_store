@@ -9,7 +9,7 @@
 
       <div class="grid_6">
         <div class="welcome">
-          Welcome visitor you can <a href="/login.html">login</a> or <a href="/login.html">create an account</a>.
+          Welcome visitor you can <a href="/users/sign_in">login</a> or <a href="/users/sign_up">create an account</a>.
         </div><!-- .welcome -->
       </div><!-- .grid_6 -->
 
@@ -87,9 +87,13 @@
 		<li class="separator">|</li>
             <li><a href="#">My Wishlist</a></li>
 		<li class="separator">|</li>
-            <li><a href="/login.html">Log In</a></li>
-		<li class="separator">|</li>
-            <li><a href="/login.html">Sign Up</a></li>
+    <% if current_user.present? %>
+            <li><a href="/users/sign_out">Log Out</a></li>
+            <% else %>
+             <li><a href="/users/sign_in">Log In</a></li>
+              <li class="separator">|</li>
+            <li><a href="/users/sign_up">Sign Up</a></li>
+            <% end %>
           </ul>
         </nav><!-- .private -->
       </div><!-- .grid_6 -->
