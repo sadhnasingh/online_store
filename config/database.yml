@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+development:
+  <<: *default
+  database: online_store
+  username: root
+  password: root
+ 
+
+production:
+  <<: *default
+  database: online_store
+  username: root
+  password: root

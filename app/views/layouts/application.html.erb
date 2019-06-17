@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OnlineStore</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  </head>
+
+  <body>
+<%= render partial: 'layouts/header'%>
+    <%= yield %>
+  <%= render partial: 'layouts/footer'%>
+
+  </body>
+</html>
