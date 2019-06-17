@@ -236,51 +236,51 @@ body{
 *********/
 @font-face{
     font-family: Bitter;
-    src: url("<%= asset_path("fonts/Bitter.eot")%>")
+    src: url("fonts/Bitter.eot")
 }
 @font-face{
     font-family: Bitter;
-    src: url("<%= asset_path("fonts/Bitter.ttf")%>");
+    src: url("fonts/Bitter.ttf");
 }
 @font-face{
     font-family: Bitter-Bold;
-    src: url("<%= asset_path("fonts/Bitter-Bold.eot")%>")
+    src: url("fonts/Bitter-Bold.eot")
 }
 @font-face{
     font-family: Bitter-Bold;
-    src: url("<%= asset_path("fonts/Bitter-Bold.ttf")%>");
+    src: url("fonts/Bitter-Bold.ttf");
 }
 @font-face{
     font-family: Bitter-Italic;
-    src: url("<%= asset_path("fonts/Bitter-Italic.eot")%>")
+    src: url("fonts/Bitter-Italic.eot")
 }
 @font-face{
     font-family: Bitter-Italic;
-    src: url("<%= asset_path("fonts/Bitter-Italic.ttf")%>");
+    src: url("fonts/Bitter-Italic.ttf");
 }
 @font-face{
     font-family: Segoeui;
-    src: url("<%= asset_path("fonts/Segoeui.eot")%>")
+    src: url("fonts/Segoeui.eot")
 }
 @font-face{
     font-family: Segoeui;
-    src: url("<%= asset_path("fonts/Segoeui.ttf")%>");
+    src: url("fonts/Segoeui.ttf");
 }
 @font-face{
     font-family: Segoeui-Bold;
-    src: url("<%= asset_path("fonts/Segoeui-Bold.eot")%>")
+    src: url("fonts/Segoeui-Bold.eot")
 }
 @font-face{
     font-family: Segoeui-Bold;
-    src: url("<%= asset_path("fonts/Segoeui-Bold.ttf")%>");
+    src: url("fonts/Segoeui-Bold.ttf");
 }
 @font-face{
     font-family: Segoeui-Italic;
-    src: url("<%= asset_path("fonts/Segoeui-Italic.eot")%>")
+    src: url("fonts/Segoeui-Italic.eot")
 }
 @font-face{
     font-family: Segoeui-Italic;
-    src: url("<%= asset_path("fonts/Segoeui-Italic.ttf")%>");
+    src: url("fonts/Segoeui-Italic.ttf");
 }
 
 *{
@@ -373,7 +373,7 @@ h6{
     overflow: hidden;
     display: inline-block;
     cursor: pointer;
-    background: url("<%= asset_path("images/check-bg.png")%>") left top no-repeat;
+    background: url(/images/check-bg.png) left top no-repeat;
 }
 .niceChecked{
     background-position: left bottom;
@@ -389,7 +389,7 @@ h6{
     overflow: hidden;
     display: inline-block;
     cursor: pointer;
-    background: url("<%= asset_path("images/radio-bg.png")%>") left top no-repeat;
+    background: url(/images/radio-bg.png) left top no-repeat;
 }
 .radioChecked{
     background-position: left bottom;
@@ -431,10 +431,10 @@ select,
     height: 33px;
     overflow: hidden;
     cursor: pointer;
-    background: url("<%= asset_path("images/select-button.png")%>") 50% 50% no-repeat #f5f7f9;
+    background: url(/images/select-button.png) 50% 50% no-repeat #f5f7f9;
 }
 .selectBox-arrow:hover{
-    background: url("<%= asset_path("images/select-button.png")%>") 50% 50% no-repeat #eff7ff;
+    background: url(/images/select-button.png) 50% 50% no-repeat #eff7ff;
 }
 .selectBox-dropdown-menu{
     position: absolute;
@@ -533,7 +533,7 @@ textarea{
 /*** Block Quotes **/
 .blockquote{
     padding: 0 0 0 59px;
-    background: url("<%= asset_path("images/bg_blockquote.png")%>") no-repeat 8px 4px;
+    background: url(images/bg_blockquote.png) no-repeat 8px 4px;
 }
 blockquote{
     border-left: 1px solid #e0e0e0;
@@ -610,7 +610,7 @@ body{
     margin: 0 auto;
     color:#444;
     font: normal 13px/20px Segoeui, Arial, Verdana, serif;
-    background: url("/bg_header.png") repeat-x center top #fff;
+    background: url(/images/bg_header.png) repeat-x center top #fff;
     overflow-x: hidden;
 }
 .surely{
@@ -628,7 +628,7 @@ body{
 .phone_top{
     padding: 0 0 0 24px;
     margin: 9px 0 0 0;
-    background: url("/images/bg_phone_top.png") no-repeat left center;
+    background: url(/images/bg_phone_top.png) no-repeat left center;
     font: normal 11px/36px Segoeui, Arial, Verdana, serif;
 }
 .welcome{
@@ -724,7 +724,7 @@ form.search .entry_form{
     padding: 0 25px 0 8px;
     border: 1px solid #ccc;
     color: #777;
-    background: url("/images/bg_search.png") no-repeat 204px center;
+    background: url(/images/bg_search.png) no-repeat 204px center;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -khtml-border-radius: 2px;
@@ -733,7 +733,7 @@ form.search .entry_form{
 }
 form.search input.entry_form:hover{
     border: 1px solid #afafaf;
-    background: url("/bg_search_h.png") no-repeat 204px center;
+    background: url(/images/bg_search_h.png) no-repeat 204px center;
 }
 form.search input.entry_form:focus{
     outline: none;
@@ -759,7 +759,7 @@ form.search input.entry_form:focus{
     text-align: center;
     text-decoration: none;
     font: normal 11px/35px Segoeui, Arial, Verdana, serif;
-    background: url("/images/bg_cart_nav.png") no-repeat 10px 50% #f1f3f5;
+    background: url(/images/bg_cart_nav.png) no-repeat 10px 50% #f1f3f5;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -khtml-border-radius: 2px;
@@ -770,7 +770,7 @@ form.search input.entry_form:focus{
     color: #fefefe;
     text-align: center;
     text-decoration: none;
-    background: url("/bg_cart_nav_h.png") no-repeat 10px 50% #59b7c2;
+    background: url(/images/bg_cart_nav_h.png) no-repeat 10px 50% #59b7c2;
 }
 .cart_li + ul.cart_cont{
     display: none;
@@ -856,7 +856,7 @@ border-top: 1px solid #e0e0e0;
     width: 11px;
     height: 11px;
     display: block;
-    background: url("images/close.png") no-repeat 0 0;
+    background: url(/images/close.png) no-repeat 0 0;
 }
 .cart_cont a.view_cart,
 .cart_cont a.checkout{
@@ -1073,20 +1073,19 @@ nav.private ul li a:hover{
     margin: 13px 0 0 16px;
     width: 10px;
     height: 15px;
-    asset-url
-    background: url("/bg_arows.png") no-repeat left top;
+    background: url(/images/bg_arows.png) no-repeat left top;
 
-    background: url("/bg_arows.png") no-repeat left top;
+    background: url(/images/bg_arows.png) no-repeat left top;
     text-indent: -9999px;
 }
 .slidnext span{
-    background: url("/bg_arows.png") no-repeat right top;
+    background: url(/images/bg_arows.png) no-repeat right top;
 }
 .slidprev:hover span{
-    background: url("/bg_arows.png") no-repeat left bottom;
+    background: url(/images/bg_arows.png) no-repeat left bottom;
 }
 .slidnext:hover span{
-    background: url("/bg_arows.png") no-repeat right bottom;
+    background: url(/images/bg_arows.png) no-repeat right bottom;
 }
 .slidprev:hover,
 .slidnext:hover{
@@ -1309,7 +1308,7 @@ aside h4{
     height: 11px;
     margin: 1px 8px 0 1px;
     display: block;
-    background: url("images/close.png") no-repeat 0 0;
+    background: url(/images/close.png) no-repeat 0 0;
 }
 .currently_shopping .clear_all{
     float: right;
@@ -1417,7 +1416,7 @@ input.vote{
     height: 11px;
     margin: 5px 0px 0 -25px;
     display: block;
-    background: url("images/close.png") no-repeat 0 0;
+    background: url(/images/close.png) no-repeat 0 0;
 }
 #compare_products button{
     float: left;
@@ -1476,7 +1475,7 @@ input.vote{
     margin: 0px 0 0px 0px;
     text-align: center;
     border:1px solid #e0e0e0;
-    background: url("images/bg_banner.png") no-repeat center center;
+    background: url(/images/bg_banner.png) no-repeat center center;
     border-radius: 2px;
     -moz-border-radius: 2px;
     -khtml-border-radius: 2px;
@@ -1593,7 +1592,7 @@ input.vote{
 #checkout_progress ul li a {
     float: right;
     padding: 0 0 0 16px;
-    background: url("images/edit.png") left center no-repeat;
+    background: url(/images/edit.png) left center no-repeat;
     color: #777;
     text-decoration: none;
 }
@@ -1658,7 +1657,7 @@ h1.post_title{
     display: block;
     width: 16px;
     height: 16px;
-    background-image: url(../images/grid_list.png);
+    background-image: url(/images/grid_list.png);
     opacity: .25;
     text-indent: -9999px;
 }
@@ -1772,7 +1771,7 @@ h1.post_title{
     height: 14px;
     width: 14px;
     margin: 0 2px 0 0;
-    background: url(../images/review.png) no-repeat 0 0 ;
+    background: url(/images/review.png) no-repeat 0 0 ;
 }
 .listing_product .product_li .entry_content .review a.plus,
 .listing_product .product_li .entry_content .review a:hover{
@@ -1837,12 +1836,12 @@ a.more:hover{
     text-decoration: none;
     margin: 0 0 0px 7px;
     border-right: 1px solid #e0e0e0;
-    background: url(../images/bg_obn.png) no-repeat 50% 50%;
+    background: url(/images/bg_obn.png) no-repeat 50% 50%;
 }
 .listing_product .product_li .cart a.like{
     margin: 0;
     border: 0 none;
-    background: url(../images/bg_like.png) no-repeat 50% 50%;
+    background: url(/images/bg_like.png) no-repeat 50% 50%;
 }
 .listing_product .product_li .cart a.obn:hover,
 .listing_product .product_li .cart a.like:hover{
@@ -2007,10 +2006,10 @@ a.more:hover{
     margin: 7px 0 0 10px;
 }
 .product_page .img_slid .next_prev #img_next.arows span{
-    background: url("/bg_arows.png") no-repeat right top;
+    background: url(/images/bg_arows.png) no-repeat right top;
 }
 .product_page .img_slid .next_prev #img_next.arows:hover span{
-    background: url("/bg_arows.png") no-repeat right bottom;
+    background: url(/images/bg_arows.png) no-repeat right bottom;
 }
 .product_page .entry_content p{
     margin-bottom: 20px;
@@ -2027,7 +2026,7 @@ a.more:hover{
     height: 14px;
     width: 14px;
     margin: 6px 2px 0 0;
-    background: url(../images/review.png) no-repeat 0 0 ;
+    background: url(/images/review.png) no-repeat 0 0 ;
 }
 .product_page .entry_content .review a.plus{
     background-position: 100% 0;
@@ -2073,7 +2072,7 @@ a.more:hover{
 .product_page .entry_content .ava_price .availability span{
     color: #277127;
     padding: 0 0 0 15px;
-    background: url(../images/gal.png) no-repeat 2px 50%;
+    background: url(/images/gal.png) no-repeat 2px 50%;
 }
 .product_page .entry_content .ava_price .sku span{
     color: #444;
@@ -2107,13 +2106,13 @@ a.more:hover{
     width: auto;
     height: 12px;
     padding: 0 0 0 17px;
-    background: url(../images/bg_obn.png)  no-repeat 0 50%;
+    background: url(/images/bg_obn.png)  no-repeat 0 50%;
     font: normal 12px/12px Segoeui, Arial, Verdana, serif;
     color: #777;
     text-decoration: none;
 }
 .product_page .entry_content .block_cart .obn_like .like a{
-    background: url(../images/bg_like.png)  no-repeat 0 50%;
+    background: url(/images/bg_like.png)  no-repeat 0 50%;
 }
 .product_page .entry_content .block_cart .obn_like .obn a:hover,
 .product_page .entry_content .block_cart .obn_like .like a:hover{
@@ -2275,7 +2274,7 @@ a.more:hover{
     height: 14px;
     width: 14px;
     margin: 0px 2px 0 0;
-    background: url(../images/review.png) no-repeat 0 0;
+    background: url(/images/review.png) no-repeat 0 0;
 }
 .evaluation .quality a.plus,
 .evaluation .price a.plus {
@@ -2467,7 +2466,7 @@ table.cart_product .edit{
 }
 table.cart_product .edit a{
     padding: 0 0 0 16px;
-    background: url(../images/edit.png) left center no-repeat;
+    background: url(/images/edit.png) left center no-repeat;
     color: #777;
     text-decoration: none;
 }
@@ -2491,7 +2490,7 @@ table.cart_product a.close {
     width: 11px;
     height: 11px;
     display: block;
-    background: url(../images/close.png) no-repeat 0 0;
+    background: url(/images/close.png) no-repeat 0 0;
 }
 table.cart_product td.images{
     padding: 20px 20px 20px 0;
@@ -2541,7 +2540,7 @@ table.cart_product td.cart_but button.continue span{
     margin: 1px 5px 0 0;
     height: 11px;
     width: 5px;
-    background: url(../images/button_cart.png) left center no-repeat;
+    background: url(/images/button_cart.png) left center no-repeat;
     text-indent: -9999px;
 }
 table.cart_product td.cart_but button.update span{
@@ -2549,7 +2548,7 @@ table.cart_product td.cart_but button.update span{
     margin: 1px 5px 0 0;
     height: 11px;
     width: 9px;
-    background: url(../images/button_cart.png) right center no-repeat;
+    background: url(/images/button_cart.png) right center no-repeat;
     text-indent: -9999px;
 }
 .bottom_block.estimate{
@@ -2617,7 +2616,7 @@ table.cart_product td.cart_but button.update span{
     width: 255px;
     height: 55px;
     font: bold 14px/55px Segoeui-Bold, Arial, Verdana, serif;
-    background-image: url(../images/bg_chackout.png);
+    background-image: url(/images/bg_chackout.png);
     background-position: 225px 48%;
     background-repeat: no-repeat;
 }
@@ -2717,7 +2716,7 @@ table.compare tr.close_top a.close {
     width: 11px;
     height: 11px;
     display: block;
-    background: url(../images/close.png) no-repeat 0 0;
+    background: url(/images/close.png) no-repeat 0 0;
 }
 table.compare tr.images a{
     display: block;
@@ -2766,7 +2765,7 @@ table.compare tr.rating td .quality a {
     height: 14px;
     width: 14px;
     margin: 0px 2px 0 0;
-    background: url(../images/review.png) no-repeat 0 0;
+    background: url(/images/review.png) no-repeat 0 0;
 }
 table.compare tr.rating td .quality a.plus {
     background-position: 100% 0;
@@ -2792,7 +2791,7 @@ table.compare tr.close_botttom a.close {
     width: 11px;
     height: 11px;
     display: block;
-    background: url(../images/close.png) no-repeat 0 0;
+    background: url(/images/close.png) no-repeat 0 0;
 }
 
 /************
@@ -2966,7 +2965,7 @@ article.post .footer_article .number_c{
     text-align: center;
     color: #777;
     font: normal 13px/20px Segoeui, Arial, Verdana, serif;
-    background: url(../images/n_com.png) left top no-repeat;
+    background: url(/images/n_com.png) left top no-repeat;
 }
 article.view_post{
     border-bottom: 1px solid #e0e0e0;
@@ -3070,16 +3069,16 @@ a:hover.arows{
     width: 10px;
     height: 15px;
     text-indent: -9999px;
-    background: url("/bg_arows.png") no-repeat left top;
+    background: url("/images/bg_arows.png") no-repeat left top;
 }
 .arows.next span{
-    background: url("/bg_arows.png") no-repeat right top;
+    background: url("/images/bg_arows.png") no-repeat right top;
 }
 .arows:hover span{
-    background: url("/bg_arows.png") no-repeat left bottom;
+    background: url("/images/bg_arows.png") no-repeat left bottom;
 }
 .arows.next:hover span{
-    background: url("/bg_arows.png") no-repeat right bottom;
+    background: url("/images/bg_arows.png") no-repeat right bottom;
 }
 .caroufredsel_wrapper{
     width: 1008px;
@@ -3177,13 +3176,13 @@ img.sale{
     border-right: 1px solid #e0e0e0;
 }
 .product .cart .obn{
-    background: url(../images/bg_obn.png) no-repeat 50% 50%;
+    background: url(/images/bg_obn.png) no-repeat 50% 50%;
 }
 .product .cart .like{
-    background: url(../images/bg_like.png) no-repeat 50% 50%;
+    background: url(/images/bg_like.png) no-repeat 50% 50%;
 }
 .product .cart .bay{
-    background: url(../images/bg_bay.png) no-repeat 50% 50% #f5f7f9;
+    background: url(/images/bg_bay.png) no-repeat 50% 50% #f5f7f9;
     border: 0 none;
 }
 .product .cart a:hover.obn,
@@ -3256,7 +3255,7 @@ form.letter_form #submit{
     border: 1px solid #ccc;
     border-left: 0 none;
     color: #777;
-    background: url(../images/bg_newsletter.png) no-repeat center center #fff;
+    background: url(/images/bg_newsletter.png) no-repeat center center #fff;
     border-radius: 0 2px 2px 0;
     -moz-border-radius: 0 2px 2px 0;
     -khtml-border-radius: 0 2px 2px 0;
@@ -3273,7 +3272,7 @@ form.letter_form #submit:hover{
     padding: 0px 15px 0 55px;
     margin: 23px 0 0 0;
     min-height: 45px;
-    background: url(../images/let_d.png) no-repeat left top;
+    background: url(/images/let_d.png) no-repeat left top;
     font: italic 11px/17px Bitter-Italic, Myriad Pro, Verdana, serif;
 }
 
@@ -3285,7 +3284,7 @@ form.letter_form #submit:hover{
     padding: 58px 0;
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
-    background: url(../images/bg_footer.png) repeat left top;
+    background: url(/images/bg_footer.png) repeat left top;
 }
 .f_navigation h3{
     padding: 0 0 10px 0;
@@ -3297,14 +3296,14 @@ ul.f_contact li{
     list-style: none;
     margin: 0 0 7px 0;
     padding: 0 0 0 25px;
-    background: url(../images/li_adr.png) no-repeat 1px 50%;
+    background: url(/images/li_adr.png) no-repeat 1px 50%;
     font: 12px/22px Segoeui, Arial, Verdana, serif;
 }
 ul.f_contact li+li{
-background: url(../images/li_phone.png) no-repeat 0px 50%;
+background: url(/images/li_phone.png) no-repeat 0px 50%;
 }
 ul.f_contact li+li+li{
-background: url(../images/li_let.png) no-repeat 0px 50%;
+background: url(/images/li_let.png) no-repeat 0px 50%;
 }
 .f_navigation nav.f_menu ul{
 list-style: none;
@@ -3334,7 +3333,7 @@ list-style: none;
     width: 21px;
     height: 21px;
     margin: 0 0 0 4px;
-    background-image: url(../images/bg_soc.png);
+    background-image: url(/images/bg_soc.png);
     background-repeat: no-repeat;
     background-position: 0 0;
 }
@@ -3382,7 +3381,7 @@ list-style: none;
       * Nav primary *
       ***************/
     .primary .menu-select{
-        background: url(../images/bg-primary-menu.png) no-repeat 20px 49%, url(../images/primary-plus.png) no-repeat 97% 49%;
+        background: url(/images/bg-primary-menu.png) no-repeat 20px 49%, url(/images/primary-plus.png) no-repeat 97% 49%;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
@@ -3395,7 +3394,7 @@ list-style: none;
         width: 100%;
     }
     .primary .menu-select.minus{
-        background: url(../images/bg-primary-menu.png) no-repeat 20px 49%, url(../images/primary-minus.png) no-repeat 97% 49%;
+        background: url(/images/bg-primary-menu.png) no-repeat 20px 49%, url(/images/primary-minus.png) no-repeat 97% 49%;
     }
     .primary > ul{
         background: #fff;
@@ -3435,12 +3434,12 @@ list-style: none;
         background-color: #f5f7f9;
     }
     .primary > ul li.parent a{
-	background-image: url(../images/primary-parent-plus.png);
+	background-image: url(/images/primary-parent-plus.png);
         background-repeat: no-repeat;
         background-position: 97% 49%;
     }
     .primary > ul li.parent.minus a{
-	background-image: url(../images/primary-parent-minus.png);
+	background-image: url(/images/primary-parent-minus.png);
         background-repeat: no-repeat;
         background-position: 97% 49%;
     }

@@ -12,4 +12,3 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( css/style.css js/jquery-1.7.2.min.js js/html5.js js/html5.js js/main.js js/jquery.carouFredSel-6.2.0-packed.js js/jquery.touchSwipe.min.js js/checkbox.js js/radio.js js/selectBox.js js/jquery.jqzoom-core.js)
