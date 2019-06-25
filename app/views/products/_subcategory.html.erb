@@ -1,0 +1,11 @@
+	<%# Category.all.each do |category|%>
+    <%#= form.label :sub_category_id %>
+    <%#= form.number_field :sub_category_id %>
+    <%#= category.sub_categories%>
+    <div class="field sub">
+    <% @w.each do |w|%>
+    <%#= w.name%>
+    <%#= select_tag :sub_category_id, :value=> "w.name" %>
+   <option value="<%= w[:id] %>"><%= w[:name] %></option>
+  <% end %>
+  </div> 

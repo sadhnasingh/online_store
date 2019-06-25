@@ -1,6 +1,6 @@
 class AdminController < ApplicationController
 	layout false
-	layout 'admin'
+	# layout 'admin'
   def index
   end
 end

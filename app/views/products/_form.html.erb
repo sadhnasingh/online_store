@@ -1,0 +1,60 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= form.label :category_id %>
+    <%#= form.number_field :sub_category_id %>
+    <%= form.select :category_id, Category.all.collect {|p| [ p.name, p.id ] }, :prompt => "--select category--" %>
+  </div>
+
+  <div class="field sub">
+    <%#= render 'subcategory' %>
+</div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image%>
+  </div>
+  <div class="field">
+    <%= form.label :desription %>
+    <%= form.text_area :description %>
+  </div>
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+  <div class="field">
+    <%= form.label :full_price %>
+    <%= form.text_field :full_price %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<script type="text/javascript">
+  $('#product_category_id').on('change', function() {
+  // alert( this.value );
+  var cat = this.value
+  $.ajax({
+    url: '/products/subcategory',
+    type: 'GET',
+    dataType: "script",
+    data: {category: cat},
+    })
+});
+</script>
