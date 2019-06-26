@@ -1,11 +1,8 @@
-	<%# Category.all.each do |category|%>
-    <%#= form.label :sub_category_id %>
-    <%#= form.number_field :sub_category_id %>
-    <%#= category.sub_categories%>
-    <div class="field sub">
-    <% @w.each do |w|%>
-    <%#= w.name%>
-    <%#= select_tag :sub_category_id, :value=> "w.name" %>
-   <option value="<%= w[:id] %>"><%= w[:name] %></option>
-  <% end %>
-  </div> 
+  <div class="sub">
+  <select class="selectbox_date TW260 marR10" name="product[sub_category_id]" id="subcategory">
+    <option value="">-- Select Sub Subcategory --</option>
+    <% for subcat in @w %>
+        <option value="<%= subcat[:id] %>"><%= subcat[:name] %></option>
+    <% end %>
+</select> 
+</div>

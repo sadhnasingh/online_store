@@ -15,6 +15,7 @@
     <%#= form.number_field :sub_category_id %>
     <%= form.select :category_id, Category.all.collect {|p| [ p.name, p.id ] }, :prompt => "--select category--" %>
   </div>
+  
 
   <div class="field sub">
     <%#= render 'subcategory' %>
