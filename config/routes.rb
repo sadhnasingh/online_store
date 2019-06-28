@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   	collection do
   		get :subcategory 
   	end
+    member do
+      get :product_page
+    end
   end
   resources :sub_categories
   resources :categories
@@ -11,5 +14,5 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   root 'welcome#index'
-  # get 'products/subcategory'
+  
 end

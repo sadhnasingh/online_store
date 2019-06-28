@@ -66,6 +66,10 @@ class ProductsController < ApplicationController
     @category = Category.find(params[:category])
     @w = @category.sub_categories
   end
+  def product_page
+    render :layout => 'application'
+    @product = Product.find(params[:id])
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
