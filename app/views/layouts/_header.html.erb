@@ -37,24 +37,17 @@
             <ul class="cart_cont">
               <li class="no_border"><p>Recently added item(s)</p></li>
               <li>
-                <a href="/product_page.html" class="prev_cart"><div class="cart_vert"><img src="<%= asset_path('cart_img.png')%>" alt="" title="" /></div></a>
+                <% Cart.all.each do |c|%>
+                <a href="c.product.image" class="prev_cart"><div class="cart_vert"><%= image_tag c.product.image.try(:url).to_s %></div></a>
                 <div class="cont_cart">
-                  <h4>Caldrea Linen and Room Spray</h4>
-                  <div class="price">1 x $399.00</div>
+                  <h4><%= c.product.description%></h4>
+                  <div class="price"><%= c.quantity%> x $<%= c.product.price%></div>
                 </div>
                 <a title="close" class="close" href="#"></a>
                 <div class="clear"></div>
+                <%end%>
               </li>
               
-              <li>
-                <a href="/product_page.html" class="prev_cart"><div class="cart_vert"><img src="<%= asset_path('produkt_slid1.png')%>" alt="" title="" /></div></a>
-                <div class="cont_cart">
-                  <h4>Caldrea Linen and Room Spray</h4>
-                  <div class="price">1 x $399.00</div>
-                </div>
-                <a title="close" class="close" href="#"></a>
-                <div class="clear"></div>
-              </li>
 	      <li class="no_border">
 		<a href="/shopping_cart.html" class="view_cart">View shopping cart</a>
 		<a href="/checkout.html" class="checkout">Procced to Checkout</a>

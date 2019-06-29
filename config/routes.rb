@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get :product_page
     end
   end
+  resources :carts
   resources :sub_categories
   resources :categories
     get 'admin/index'

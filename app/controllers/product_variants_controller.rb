@@ -43,7 +43,7 @@ class ProductVariantsController < ApplicationController
   def update
     respond_to do |format|
       if @product_variant.update(product_variant_params)
-        format.html { redirect_to @product_variant, notice: 'Product variant was successfully updated.' }
+        format.html { redirect_to product_product_variants_path, notice: 'Product variant was successfully updated.' }
         format.json { render :show, status: :ok, location: @product_variant }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ProductVariantsController < ApplicationController
   def destroy
     @product_variant.destroy
     respond_to do |format|
-      format.html { redirect_to product_variants_url, notice: 'Product variant was successfully destroyed.' }
+      format.html { redirect_to product_product_variants_path, notice: 'Product variant was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
