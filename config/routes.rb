@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :products do
+  resources :product_variants
   	collection do
   		get :subcategory 
   	end

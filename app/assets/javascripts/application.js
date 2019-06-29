@@ -17,6 +17,7 @@
 //= require js/html5
 //= require js/main
 //= require js/jquery.carouFredSel-6.2.0-packed
+//= require js/jquery.touchSwipe.min
 //= require js/checkbox
 //= require js/radio
 //= require js/selectBox

@@ -26,11 +26,14 @@
 				</div><!-- .prev -->
 
 				<ul class="pagination clearfix" id="thumblist">
-					<li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid.png',largeimage: './images/produkt_slid.png'}"><img src='images/produkt_slid.png' alt=""></a></li>
+					<% @product.product_variants.each do |pv|%>
+					 <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'pv.image',largeimage: 'pv.image'}"><%= image_tag pv.image.try(:url).to_s%></a></li>
+					 <%end%>
+					<!-- <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid.png',largeimage: './images/produkt_slid.png'}"><img src='images/produkt_slid.png' alt=""></a></li>
 					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid1.png',largeimage: './images/produkt_slid1.png'}"><img src='images/produkt_slid1.png' alt=""></a></li>
 					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid2.png',largeimage: './images/produkt_slid2.png'}"><img src='images/produkt_slid2.png' alt=""></a></li>
 					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid3.png',largeimage: './images/produkt_slid3.png'}"><img src='images/produkt_slid3.png' alt=""></a></li>
-					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid4.png',largeimage: './images/produkt_slid4.png'}"><img src='images/produkt_slid4.png' alt=""></a></li>
+					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid4.png',largeimage: './images/produkt_slid4.png'}"><img src='images/produkt_slid4.png' alt=""></a></li> -->
 				</ul>
 
 				<div class="next_prev">
