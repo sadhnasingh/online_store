@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
   resources :carts
+  resources :subscribes
   resources :sub_categories
   resources :categories
     get 'admin/index'

@@ -1,0 +1,12 @@
+ <%= form_for :subscribe, url: subscribes_path ,html: {id: "subscribe"}, class: "letter_form" do |form| %>
+	<%= form.email_field :email,:class=>"l_form",:placeholder=>"Enter your email address..." %>
+	<%= form.submit 'Subscribe', :id => "submit"%>
+	<%#= form.submit 'Add to Cart', :class => "bay" %>
+	<!-- <a href="#" class="bay">Add to Cart</a>
+	<input type="text" name="" class="number" value="1" />
+	<span>Quantity:</span> -->
+<% end%>
+<!--  <form class="letter_form">
+<input type="email" name="newsletter" class="l_form" value="" placeholder="Enter your email address..."/>
+	<input type="submit" id="submit" value="" />
+</form> -->
