@@ -4,6 +4,7 @@ class RatingsController < ApplicationController
 	def new
 	end
 	def create
+	@user = current_user.id
 	rating = Rating.new(rating_params)
 	@product = params[:rating][:product_id]
 	respond_to do |format|
@@ -12,6 +13,7 @@ class RatingsController < ApplicationController
 	  else
 	  end
     end
+    rating.update(user_id: @user)
 end
     
  private

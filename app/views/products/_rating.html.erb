@@ -48,7 +48,6 @@
   <div class="evaluation">
     <div class="quality">
       <%= f.hidden_field :rating, class:"form-control live-rating", :required => true, value: @rating.rating  %>
-      <%= f.hidden_field :user_id, class:"form-control live-rating", :required => true, value: current_user.id  %>
       <div class="my-rating"></div>
     </div>
     <div class="price">
@@ -81,7 +80,6 @@
   <div class="evaluation">
     <div class="quality">
       <%= f.hidden_field :rating, class:"form-control live-rating", :required => true, value: @rating.rating  %>
-      <%= f.hidden_field :user_id, class:"form-control live-rating", :required => true, value: current_user.id  %>
       <div class="my-rating"></div>
     </div>
     <div class="price">

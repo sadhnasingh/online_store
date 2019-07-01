@@ -1,5 +1,5 @@
 class Rating < ApplicationRecord
-	belongs_to :user
+	# belongs_to :user
 	belongs_to :product
 	has_many :likes, as: :likeable, dependent: :destroy
 	def display_rating
