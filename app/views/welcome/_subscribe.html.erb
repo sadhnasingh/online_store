@@ -1,6 +1,7 @@
  <%= form_for :subscribe, url: subscribes_path ,html: {id: "subscribe"}, class: "letter_form" do |form| %>
 	<%= form.email_field :email,:class=>"l_form",:placeholder=>"Enter your email address..." %>
-	<%= form.submit 'Subscribe', :id => "submit"%>
+	<br><br>
+	<%= form.submit 'Subscribe', :id => "submit", style: "width:50%"%>
 	<%#= form.submit 'Add to Cart', :class => "bay" %>
 	<!-- <a href="#" class="bay">Add to Cart</a>
 	<input type="text" name="" class="number" value="1" />

@@ -69,6 +69,15 @@ class ProductsController < ApplicationController
   def product_page
     render :layout => 'application'
     @product = Product.find(params[:id])
+    # if current_user.present?
+    #   if current_user.ratings.where(product_id: @product.id).any?
+    #     @rating = current_user.ratings.where(product_id: @product.id).first
+    #   else
+    #     @rating = Rating.new
+    #   end
+    # else
+    #   @rating = Rating.new
+    # end 
   end
 
   private

@@ -1,0 +1,169 @@
+<!-- <form class="add_comments"> -->
+<%  @product = Product.find(params[:id])
+  # byebug
+   # if current_user.present?
+   #   if current_user.ratings.where(product_id: @product.id).any?
+   #     @rating = current_user.ratings.where(product_id: @product.id).first
+   #   else
+   #     @rating = Rating.new
+   #   end
+   # else
+     @rating = Rating.new
+   # end
+    %>
+<div class="tab2 tab_body">
+<h4>Customer reviews</h4>
+<ul class="comments">
+  <% @product.ratings.order("ratings.created_at DESC").each do |rating|%>
+  <div class="review-block">
+    <div class="row">
+      <div class="col-sm-3">
+        <img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+        <div class="review-block-name"><a href="#"><%#= rating.user.email %></a></div>
+        <div class="review-block-date"><%= rating.created_at.strftime('%d %b %Y')%><br/><%= time_ago_in_words(rating.created_at, include_seconds: true) %> Ago</div>
+      </div>
+      <div class="col-sm-9">
+        <div class="review-block-rate">
+          <% (1 .. (rating.rating/2)).each do |rr|%>
+          <span class="glyphicon glyphicon-star"></span>
+          <% end %>
+          <% if rating.half_star? %>
+          <span class="glyphicon glyphicon-star half"></span>
+          <% end %>
+        </div>
+        <div class="review-block-description"><%= rating.review%></div>
+        <%#byebug%>
+        <div id="rate_<%= rating.id %>_likes">
+          <%= render "likes/likes", likeable: rating %>
+        </div>
+      </div>
+    </div>
+    <hr/>
+  </div>
+  <% end %>
+</ul>
+<div id="review-rating">
+  <%= form_for :rating, url: ratings_path ,html: {class: "add_comments"} do |f| %>
+  <h4>Write Your Own Review</h4>
+  <div class="evaluation">
+    <div class="quality">
+      <%= f.hidden_field :rating, class:"form-control live-rating", :required => true, value: @rating.rating  %>
+      <%= f.hidden_field :user_id, class:"form-control live-rating", :required => true, value: current_user.id  %>
+      <div class="my-rating"></div>
+    </div>
+    <div class="price">
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!-- .evaluation -->
+  <div class="nickname">
+  </div>
+  <!-- .nickname -->
+  <div class="your_review">
+  </div>
+  <!-- .your_review -->
+  <div class="clear"></div>
+  <%= f.hidden_field :product_id, :value=> @product.id %>
+  <div class="text_review">
+    <%= f.text_area :review %>
+    <!-- 	<strong>Review</strong><sup class="surely">*</sup><br/>
+      <textarea name="text"></textarea>
+      <i>Note: HTML is not translated!</i> -->
+  </div>
+  <!-- .text_review -->
+  <%= f.submit "Add Review" %>
+  <!-- <input type="submit" value="Submit Review" /> -->
+  <%end %>
+</div>
+<div id="review-rating">
+  <%= form_for :rating, url: ratings_path ,html: {class: "add_comments"} do |f| %>
+  <h4>Write Your Own Review</h4>
+  <div class="evaluation">
+    <div class="quality">
+      <%= f.hidden_field :rating, class:"form-control live-rating", :required => true, value: @rating.rating  %>
+      <%= f.hidden_field :user_id, class:"form-control live-rating", :required => true, value: current_user.id  %>
+      <div class="my-rating"></div>
+    </div>
+    <div class="price">
+    </div>
+    <div class="clear"></div>
+  </div>
+  <!-- .evaluation -->
+  <div class="nickname">
+    <!-- <strong>Nickname</strong><sup class="surely">*</sup><br/>
+      <input type="text" name="" class="" value="" /> -->
+  </div>
+  <!-- .nickname -->
+  <div class="your_review">
+    <!-- <strong>Summary of Your Review</strong><sup class="surely">*</sup><br/>
+      <input type="text" name="" class="" value="" /> -->
+  </div>
+  <!-- .your_review -->
+  <div class="clear"></div>
+  <%= f.hidden_field :product_id, :value=> @product.id %>
+  <div class="text_review">
+    <%= f.text_area :review %>
+    <!-- 	<strong>Review</strong><sup class="surely">*</sup><br/>
+      <textarea name="text"></textarea>
+      <i>Note: HTML is not translated!</i> -->
+  </div>
+  <!-- .text_review -->
+  <%= f.submit "Add Review" %>
+  <!-- <input type="submit" value="Submit Review" /> -->
+  <%end %>
+</div>
+<script type="text/javascript">
+  $('#review-rating').hide()
+  $('.show-review').on('click', function () {
+     $('#review-rating').show()
+  })
+  $(".my-rating").starRating({
+    initialRating: '<%= @rating.display_rating %>',
+    disableAfterRate: false,
+    onHover: function(currentIndex, currentRating, $el){
+      $('.live-rating').text(currentIndex);
+    },
+    onLeave: function(currentIndex, currentRating, $el){
+      $('.live-rating').val(currentRating*2);
+      console.log(currentRating*2)
+    }
+  });
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<script type="text/javascript">
+  setTimeout(function(){
+      var scriptt = document.createElement('script');
+      scriptt.type = 'text/javascript';
+      scriptt.src = "https://i2.sdlcdn.com/js/1556186736112/snap/reviews.revamp.min.js";
+      scriptt.async = 'true';
+      document.head.appendChild(scriptt);
+  },10);
+</script>
+<style type="text/css">
+  .glyphicon-star {
+  font-size: 15px;
+  color: #f3a108;
+  }
+  .glyphicon-star.half {
+  position: relative;
+  }
+  .glyphicon-star.half:before {
+  position: relative;
+  z-index: 9;
+  width: 47%;
+  display: block;
+  overflow: hidden;
+  }
+  .glyphicon-star.half:after {
+  content: '\e006';
+  position: absolute;
+  z-index: 8;
+  color: #bdc3c7;
+  top: 0;
+  left: 0;
+  }
+  .inla
+  {
+  color: red;
+  }
+</style>

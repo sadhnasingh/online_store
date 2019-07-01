@@ -22,3 +22,4 @@
 //= require js/radio
 //= require js/selectBox
 //= require js/jquery.jqzoom-core
+//= require rating

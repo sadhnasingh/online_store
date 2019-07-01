@@ -5,8 +5,6 @@ class SubscribesController < ApplicationController
 	end
 	def create
 		pat = Subscribe.new(subscribe_params)
-		# @product = params[:cart][:product_id]
-		# byebug
       if pat.save
       	UserMailer.user_subscription(pat.email).deliver_now
       	redirect_to root_path
@@ -14,11 +12,7 @@ class SubscribesController < ApplicationController
       end
     end
     
-
-		
  private
-     
- 
 	def subscribe_params
       params.require(:subscribe).permit(:email)
     end

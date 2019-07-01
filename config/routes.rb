@@ -9,9 +9,11 @@ Rails.application.routes.draw do
     end
   end
   resources :carts
+  resources :ratings
   resources :subscribes
   resources :sub_categories
   resources :categories
+  resources :likes
     get 'admin/index'
   
   devise_for :users
