@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
   root 'welcome#index'
-  
+  post '/likes' => 'likes#create', as: :like_create
+  post '/dislikes' => 'likes#dislike', as: :dislike_create
 end

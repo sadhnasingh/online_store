@@ -11,7 +11,7 @@
      @rating = Rating.new
    # end
     %>
-<div class="tab2 tab_body">
+<div class="tab_body">
 <h4>Customer reviews</h4>
 <ul class="comments">
   <% @product.ratings.order("ratings.created_at DESC").each do |rating|%>
@@ -34,7 +34,7 @@
         <div class="review-block-description"><%= rating.review%></div>
         <%#byebug%>
         <%if current_user.present?%>
-        <div id="rate_<%= rating.id %>_likes">
+       <div id="rate_<%= rating.id %>_likes">
           <%= render "likes/likes", likeable: rating %>
         </div>
       </div>
