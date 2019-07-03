@@ -1,347 +1,381 @@
+<div class="container_12">
+  <div class="grid_12">
+    <div class="breadcrumbs">
+      <a href="/">Home</a><span>&#8250;</span><a href="#">Category</a><span>&#8250;</span><span class="current">This page</span>
+    </div>
+    <!-- .breadcrumbs -->
+  </div>
+  <!-- .grid_12 -->
+</div>
+<!-- .container_12 -->
+<div class="clear"></div>
+<section id="main">
   <div class="container_12">
-    <div class="grid_12">
-       <div class="breadcrumbs">
-	      <a href="/">Home</a><span>&#8250;</span><a href="#">Category</a><span>&#8250;</span><span class="current">This page</span>
-       </div><!-- .breadcrumbs -->
-    </div><!-- .grid_12 -->
-  </div><!-- .container_12 -->
-
-  <div class="clear"></div>
-
-  <section id="main">
-    <div class="container_12">
-       <div id="content" class="grid_9">
-	      <h1 class="page_title">Candles Orange Vanilla</h1>
-
-		<div class="product_page">
-			<div class="grid_4 img_slid" id="products">
-				<img class="sale" src="<%= asset_path('sale.png')%>" alt="Sale"/>
-				<div class="preview slides_container">
-					<div class="prev_bg">
-							<% @product = Product.find(params[:id]) %>
-						<a class="jqzoom" rel="gal1" href="<%= @product.image%>">
-							<%= image_tag @product.image.try(:url).to_s, :style=>'width: 100%;'%></a>
-						</a>
-					</div>
-				</div><!-- .prev -->
-
-				<ul class="pagination clearfix" id="thumblist">
-					<% @product.product_variants.each do |pv|%>
-					 <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'pv.image',largeimage: 'pv.image'}"><%= image_tag pv.image.try(:url).to_s%></a></li>
-					 <%end%>
-					<!-- <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid.png',largeimage: './images/produkt_slid.png'}"><img src='images/produkt_slid.png' alt=""></a></li>
-					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid1.png',largeimage: './images/produkt_slid1.png'}"><img src='images/produkt_slid1.png' alt=""></a></li>
-					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid2.png',largeimage: './images/produkt_slid2.png'}"><img src='images/produkt_slid2.png' alt=""></a></li>
-					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid3.png',largeimage: './images/produkt_slid3.png'}"><img src='images/produkt_slid3.png' alt=""></a></li>
-					<li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid4.png',largeimage: './images/produkt_slid4.png'}"><img src='images/produkt_slid4.png' alt=""></a></li> -->
-				</ul>
-
-				<div class="next_prev">
-					<a id="img_prev" class="arows" href="#"><span>Prev</span></a>
-					<a id="img_next" class="arows" href="#"><span>Next</span></a>
-				</div><!-- . -->
-			</div><!-- .grid_4 -->
-
-			<div class="grid_5">
-				<div class="entry_content">
-					<div class="review">
-						<a class="plus" href="#"></a>
-						<a class="plus" href="#"></a>
-						<a class="plus" href="#"></a>
-						<a href="#"></a>
-						<a href="#"></a>
-						<span>1 REVIEW(S)</span>
-						<a class="add_review" href="#">ADD YOUR REVIEW</a>
-					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pharetra faucibus congue. Aenean luctus dolor et purus malesuada luctus. Quisque ullamcorper ante viverra lectus fermentum quis rutrum erat sollicitudin. Fusce tortor massa.</p>
-					<div class="ava_price">
-						<div class="availability_sku">
-							<div class="availability">
-								Availability: <span>In stock</span>
-							</div>
-							<div class="sku">
-								SKU: <span>Candles OV</span>
-							</div>
-						</div><!-- .availability_sku -->
-
-						<div class="price">
-							<div class="price_new">$550.00</div>
-							<div class="price_old">$725.00</div>
-						</div><!-- .price -->
-					</div><!-- .ava_price -->
-
-					<div class="block_cart">
-						<div class="obn_like">
-							<div class="obn"><a href="#" class="obn">Add to Compare</a></div>
-							<div class="like"><a href="#" class="like">Add to Wishlist</a></div>
-						</div>
-						
-						<div class="cart">
-							<%= render 'cart', product: @product%>
-						<%if current_user.present?%>
-			       <div id="product_<%= @product %>_likes">
-			          <%= render "likes/likes", likeable: @product %>
-			        </div>
-			      </div>
-			      <%end%>
-						<div class="clear"></div>
-						</div>
-					</div><!-- .block_cart -->
-					<div class="soc">
-						<img src="images/soc.png" alt="Soc"/>
-					</div><!-- .soc -->
-				</div><!-- .entry_content -->
-
-			</div><!-- .grid_5 -->
-
-			<div class="clear"></div>
-
-			<div class="grid_9" >
-				<!-- <div id="wrapper_tab" class=""> -->
-					
-					Reviews
-
-					<div class="clear"></div>
-
-					<%= render 'rating' ,product: @product%>
-					<div class="clear"></div>
-					<!-- </div> -->
-					
-					<div class="clear"></div>
-				</div>​<!-- #wrapper_tab -->
-				<div class="clear"></div>
-			</div><!-- .grid_9 -->
-
-			<div class="clear"></div>
-
-			<div class="related">
-				<div class="c_header">
-					<div class="grid_7">
-						<h2>Related Products</h2>
-					</div><!-- .grid_7 -->
-
-					<div class="grid_2">
-						<a id="next_c1" class="next arows" href="#"><span>Next</span></a>
-						<a id="prev_c1" class="prev arows" href="#"><span>Prev</span></a>
-					</div><!-- .grid_2 -->
-				</div><!-- .c_header -->
-
-				<div class="list_carousel">
-
-				<ul id="list_product" class="list_product">
-					<li class="">
-						<div class="grid_3 product">
-							<img class="sale" src="images/sale.png" alt="Sale"/>
-							<div class="prev">
-								<a href="/product_page.html"><img src="images/product_1.png" alt="" title="" /></a>
-							</div><!-- .prev -->
-							<h3 class="title">Febreze Air Effects New Zealand Springs</h3>
-							<div class="cart">
-								<div class="price">
-									<div class="vert">
-										<div class="price_new">$550.00</div>
-										<div class="price_old">$725.00</div>
-									</div>
-								</div>
-								<a href="#" class="obn"></a>
-								<a href="#" class="like"></a>
-								<a href="#" class="bay"></a>
-							</div><!-- .cart -->
-						</div><!-- .grid_3 -->
-					</li>
-
-					<li class="">
-						<div class="grid_3 product">
-							<div class="prev">
-								<a href="/product_page.html"><img src="images/product_2.png" alt="" title="" /></a>
-							</div><!-- .prev -->
-							<h3 class="title">Febreze Air Effects New Zealand Springs</h3>
-							<div class="cart">
-								<div class="price">
-									<div class="vert">
-										<div class="price_new">$550.00</div>
-										<div class="price_old">$725.00</div>
-									</div>
-								</div>
-								<a href="#" class="obn"></a>
-								<a href="#" class="like"></a>
-								<a href="#" class="bay"></a>
-							</div><!-- .cart -->
-						</div><!-- .grid_3 -->
-					</li>
-
-					<li class="">
-						<div class="grid_3 product">
-							<div class="prev">
-								<a href="/product_page.html"><img src="images/product_3.png" alt="" title="" /></a>
-							</div><!-- .prev -->
-							<h3 class="title">Febreze Air Effects New Zealand Springs</h3>
-							<div class="cart">
-								<div class="price">
-									<div class="vert">
-										<div class="price_new">$550.00</div>
-										<div class="price_old">$725.00</div>
-									</div>
-								</div>
-								<a href="#" class="obn"></a>
-								<a href="#" class="like"></a>
-								<a href="#" class="bay"></a>
-							</div><!-- .cart -->
-						</div><!-- .grid_3 -->
-					</li>
-
-					<li class="">
-						<div class="grid_3 product">
-							<div class="prev">
-								<a href="/product_page.html"><img src="images/product_4.png" alt="" title="" /></a>
-							</div><!-- .prev -->
-							<h3 class="title">Febreze Air Effects New Zealand Springs</h3>
-							<div class="cart">
-								<div class="price">
-									<div class="vert">
-										<div class="price_new">$550.00</div>
-										<div class="price_old">$725.00</div>
-									</div>
-								</div>
-								<a href="#" class="obn"></a>
-								<a href="#" class="like"></a>
-								<a href="#" class="bay"></a>
-							</div><!-- .cart -->
-						</div><!-- .grid_3 -->
-					</li>
-			        </ul><!-- #list_product -->
-				</div><!-- .list_carousel -->
-			</div><!-- .carousel -->
-		</div><!-- .product_page -->
-		<div class="clear"></div>
-
-       </div><!-- #content -->
-       
-       <div id="sidebar" class="grid_3">
-	      <aside id="categories_nav">
-		     <h3>Categories</h3>
-
-		     <nav class="left_menu">
-			    <ul>
-				   <li><a href="#">Solids <span>(21)</span></a></li>
-				   <li><a href="#">Liquids <span> (27)</span></a></li>
-				   <li><a href="#">Spray <span>(33)</span></a></li>
-				   <li><a href="#">Electric <span>(17)</span></a></li>
-				   <li><a href="#">For Cars <span>(23)</span></a></li>
-				   <li><a href="#">For Room <span>(7)</span></a></li>
-				   <li class="last"><a href="#">Other <span>(135)</span></a></li>
-			    </ul>
-		     </nav><!-- .left_menu -->
-	      </aside><!-- #categories_nav -->
-
-	      <aside id="specials" class="specials">
-		     <h3>Specials</h3>
-
-		     <ul>
-			    <li>
-				   <div class="prev">
-					  <a href="#"><img src="images/special1.png" alt="" title="" /></a>
-				   </div>
-
-				   <div class="cont">
-					  <a href="#">Honeysuckle Flameless Luminary Refill</a>
-					  <div class="prise"><span class="old">$177.00</span>$75.00</div>
-				   </div>
-			    </li>
-
-			    <li>
-				   <div class="prev">
-					  <a href="#"><img src="images/special2.png" alt="" title="" /></a>
-				   </div>
-
-				   <div class="cont">
-					  <a href="#">Honeysuckle Flameless Luminary Refill</a>
-					  <div class="prise"><span class="old">$177.00</span>$75.00</div>
-				   </div>
-			    </li>
-		     </ul>
-	      </aside><!-- #specials -->
-
-	      <aside id="newsletter_signup">
-		     <h3>Newsletter Signup</h3>
-		     <p>Phasellus vel ultricies felis. Duis
-		     rhoncus risus eu urna pretium.</p>
-		     <%= render 'welcome/subscribe'%>
-		   <!--   <form class="newsletter">
-			    <input type="email" name="newsletter" class="your_email" value="" placeholder="Enter your email address..."/>
-			    <input type="submit" id="submit" value="Subscribe" />
-		     </form> -->
-	      </aside><!-- #newsletter_signup -->
-
-	      <aside id="banners">
-		<a id="ban_next" class="next arows" href="#"><span>Next</span></a>
-		<a id="ban_prev" class="prev arows" href="#"><span>Prev</span></a>
-
-		<h3>Banners</h3>
-
-		<div class="list_carousel">
-			<ul id="list_banners">
-				<li class="banner"><a href="#">
-					<div class="prev">
-						<img src="images/banner.png" alt="" title="" />
-					</div><!-- .prev -->
-
-					<h2>New smells</h2>
-
-					<p>in the next series</p>
- 			        </a></li>
-
-				<li class="banner"><a href="#">
-					<div class="prev">
-						<img src="images/banner.png" alt="" title="" />
-					</div><!-- .prev -->
-
-					<h2>New smells</h2>
-
-					<p>in the next series</p>
- 			        </a></li>
-
-				<li class="banner"><a href="#">
-					<div class="prev">
-						<img src="images/banner.png" alt="" title="" />
-					</div><!-- .prev -->
-
-					<h2>New smells</h2>
-
-					<p>in the next series</p>
- 			        </a></li>
-
-			</ul>
-		</div><!-- .list_carousel -->
-	      </aside><!-- #banners -->
-
-	      <aside id="tags">
-		     <h3>Tags</h3>
-		     <a class="t1" href="">california</a>
-		     <a class="t2" href="">canada</a>
-		     <a class="t3" href="">canon</a>
-		     <a class="t4" href="">cat</a>
-		     <a class="t5" href="">chicago</a>
-		     <a class="t6" href="">christmas</a>
-		     <a class="t7" href="">mars</a>
-		     <a class="t8" href="">church</a>
-		     <a class="t9" href="">city</a>
-		     <a class="t10" href="">clouds</a>
-		     <a class="t11" href="">color</a>
-		     <a class="t12" href="">concert</a>
-		     <a class="t13" href="">dance</a>
-		     <a class="t14" href="">day</a>
-		     <a class="t15" href="">dog</a>
-		     <a class="t16" href="">england</a>
-		     <a class="t17" href="">europe</a>
-	      </aside><!-- #community_poll -->
-       </div><!-- .sidebar -->
-
+    <div id="content" class="grid_9">
+      <h1 class="page_title">Candles Orange Vanilla</h1>
+      <div class="product_page">
+        <div class="grid_4 img_slid" id="products">
+          <img class="sale" src="<%= asset_path('sale.png')%>" alt="Sale"/>
+          <div class="preview slides_container">
+            <div class="prev_bg">
+              <% @product = Product.find(params[:id]) %>
+              <a class="jqzoom" rel="gal1" href="<%= @product.image%>">
+              <%= image_tag @product.image.try(:url).to_s, :style=>'width: 100%;'%></a>
+              </a>
+            </div>
+          </div>
+          <!-- .prev -->
+          <ul class="pagination clearfix" id="thumblist">
+            <% @product.product_variants.each do |pv|%>
+            <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'pv.image',largeimage: 'pv.image'}"><%= image_tag pv.image.try(:url).to_s%></a></li>
+            <%end%>
+            <!-- <li><a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid.png',largeimage: './images/produkt_slid.png'}"><img src='images/produkt_slid.png' alt=""></a></li>
+              <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid1.png',largeimage: './images/produkt_slid1.png'}"><img src='images/produkt_slid1.png' alt=""></a></li>
+              <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid2.png',largeimage: './images/produkt_slid2.png'}"><img src='images/produkt_slid2.png' alt=""></a></li>
+              <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid3.png',largeimage: './images/produkt_slid3.png'}"><img src='images/produkt_slid3.png' alt=""></a></li>
+              <li><a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: './images/produkt_slid4.png',largeimage: './images/produkt_slid4.png'}"><img src='images/produkt_slid4.png' alt=""></a></li> -->
+          </ul>
+          <div class="next_prev">
+            <a id="img_prev" class="arows" href="#"><span>Prev</span></a>
+            <a id="img_next" class="arows" href="#"><span>Next</span></a>
+          </div>
+          <!-- . -->
+        </div>
+        <!-- .grid_4 -->
+        <div class="grid_5">
+          <div class="entry_content">
+            <div class="review">
+              <a class="plus" href="#"></a>
+              <a class="plus" href="#"></a>
+              <a class="plus" href="#"></a>
+              <a href="#"></a>
+              <a href="#"></a>
+              <span>1 REVIEW(S)</span>
+              <a class="add_review" href="#">ADD YOUR REVIEW</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pharetra faucibus congue. Aenean luctus dolor et purus malesuada luctus. Quisque ullamcorper ante viverra lectus fermentum quis rutrum erat sollicitudin. Fusce tortor massa.</p>
+            <div class="ava_price">
+              <div class="availability_sku">
+                <div class="availability">
+                  Availability: <span>In stock</span>
+                </div>
+                <div class="sku">
+                  SKU: <span>Candles OV</span>
+                </div>
+              </div>
+              <!-- .availability_sku -->
+              <div class="price">
+                <div class="price_new">$550.00</div>
+                <div class="price_old">$725.00</div>
+              </div>
+              <!-- .price -->
+            </div>
+            <!-- .ava_price -->
+            <div class="block_cart">
+              <div class="obn_like">
+                <div class="obn"><a href="#" class="obn">Add to Compare</a></div>
+                <div class="like"><a href="#" class="like">Add to Wishlist</a></div>
+              </div>
+              <div class="cart">
+                <%= render 'cart', product: @product%>
+                <%if current_user.present?%>
+                <div id="product_<%= @product.id %>_likes">
+                  <%= render "likes/likes", likeable: @product %>
+                </div>
+              </div>
+              <%end%>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <!-- .block_cart -->
+          <div class="soc">
+            <img src="images/soc.png" alt="Soc"/>
+          </div>
+          <!-- .soc -->
+        </div>
+        <!-- .entry_content -->
+      </div>
+      <!-- .grid_5 -->
       <div class="clear"></div>
-
-    </div><!-- .container_12 -->
-  </section><!-- #main -->
-
+      <div class="grid_9" >
+        <br>
+        <style>
+          .bs-example{
+          margin: 20px;
+          }
+          .accordion .fa-plus{
+          margin-right: 61rem;
+          }
+        </style>
+        <script>
+          $(document).ready(function(){
+              // Add minus icon for collapse element which is open by default
+              $(".collapse.show").each(function(){
+              	$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+              });
+              
+              // Toggle plus minus icon on show hide of collapse element
+              $(".collapse").on('show.bs.collapse', function(){
+              	$(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+              }).on('hide.bs.collapse', function(){
+              	$(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+              });
+          });
+        </script>
+        <div class="accordion" id="accordionExample">
+          <div class="card-header" id="headingOne">
+            <h2 class="">
+              <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i>Description</button>									
+            </h2>
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. </p>
+            </div>
+          </div>
+        </div>
+        <h3>
+          Reviews
+        </h3>
+        <div class="clear"></div>
+        <%= render 'rating' ,product: @product%>
+        <div class="clear"></div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+      <div class="related">
+        <div class="c_header">
+          <div class="grid_7">
+            <h2>Related Products</h2>
+          </div>
+          <!-- .grid_7 -->
+          <div class="grid_2">
+            <a id="next_c1" class="next arows" href="#"><span>Next</span></a>
+            <a id="prev_c1" class="prev arows" href="#"><span>Prev</span></a>
+          </div>
+          <!-- .grid_2 -->
+        </div>
+        <!-- .c_header -->
+        <div class="list_carousel">
+          <ul id="list_product" class="list_product">
+            <li class="">
+              <div class="grid_3 product">
+                <img class="sale" src="images/sale.png" alt="Sale"/>
+                <div class="prev">
+                  <a href="/product_page.html"><img src="images/product_1.png" alt="" title="" /></a>
+                </div>
+                <!-- .prev -->
+                <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+                <div class="cart">
+                  <div class="price">
+                    <div class="vert">
+                      <div class="price_new">$550.00</div>
+                      <div class="price_old">$725.00</div>
+                    </div>
+                  </div>
+                  <a href="#" class="obn"></a>
+                  <a href="#" class="like"></a>
+                  <a href="#" class="bay"></a>
+                </div>
+                <!-- .cart -->
+              </div>
+              <!-- .grid_3 -->
+            </li>
+            <li class="">
+              <div class="grid_3 product">
+                <div class="prev">
+                  <a href="/product_page.html"><img src="images/product_2.png" alt="" title="" /></a>
+                </div>
+                <!-- .prev -->
+                <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+                <div class="cart">
+                  <div class="price">
+                    <div class="vert">
+                      <div class="price_new">$550.00</div>
+                      <div class="price_old">$725.00</div>
+                    </div>
+                  </div>
+                  <a href="#" class="obn"></a>
+                  <a href="#" class="like"></a>
+                  <a href="#" class="bay"></a>
+                </div>
+                <!-- .cart -->
+              </div>
+              <!-- .grid_3 -->
+            </li>
+            <li class="">
+              <div class="grid_3 product">
+                <div class="prev">
+                  <a href="/product_page.html"><img src="images/product_3.png" alt="" title="" /></a>
+                </div>
+                <!-- .prev -->
+                <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+                <div class="cart">
+                  <div class="price">
+                    <div class="vert">
+                      <div class="price_new">$550.00</div>
+                      <div class="price_old">$725.00</div>
+                    </div>
+                  </div>
+                  <a href="#" class="obn"></a>
+                  <a href="#" class="like"></a>
+                  <a href="#" class="bay"></a>
+                </div>
+                <!-- .cart -->
+              </div>
+              <!-- .grid_3 -->
+            </li>
+            <li class="">
+              <div class="grid_3 product">
+                <div class="prev">
+                  <a href="/product_page.html"><img src="images/product_4.png" alt="" title="" /></a>
+                </div>
+                <!-- .prev -->
+                <h3 class="title">Febreze Air Effects New Zealand Springs</h3>
+                <div class="cart">
+                  <div class="price">
+                    <div class="vert">
+                      <div class="price_new">$550.00</div>
+                      <div class="price_old">$725.00</div>
+                    </div>
+                  </div>
+                  <a href="#" class="obn"></a>
+                  <a href="#" class="like"></a>
+                  <a href="#" class="bay"></a>
+                </div>
+                <!-- .cart -->
+              </div>
+              <!-- .grid_3 -->
+            </li>
+          </ul>
+          <!-- #list_product -->
+        </div>
+        <!-- .list_carousel -->
+      </div>
+      <!-- .carousel -->
+    </div>
+    <!-- .product_page -->
+    <div class="clear"></div>
+  </div>
+  <!-- #content -->
+  <div id="sidebar" class="grid_3">
+    <aside id="categories_nav">
+      <h3>Categories</h3>
+      <nav class="left_menu">
+        <ul>
+          <li><a href="#">Solids <span>(21)</span></a></li>
+          <li><a href="#">Liquids <span> (27)</span></a></li>
+          <li><a href="#">Spray <span>(33)</span></a></li>
+          <li><a href="#">Electric <span>(17)</span></a></li>
+          <li><a href="#">For Cars <span>(23)</span></a></li>
+          <li><a href="#">For Room <span>(7)</span></a></li>
+          <li class="last"><a href="#">Other <span>(135)</span></a></li>
+        </ul>
+      </nav>
+      <!-- .left_menu -->
+    </aside>
+    <!-- #categories_nav -->
+    <aside id="specials" class="specials">
+      <h3>Specials</h3>
+      <ul>
+        <li>
+          <div class="prev">
+            <a href="#"><img src="images/special1.png" alt="" title="" /></a>
+          </div>
+          <div class="cont">
+            <a href="#">Honeysuckle Flameless Luminary Refill</a>
+            <div class="prise"><span class="old">$177.00</span>$75.00</div>
+          </div>
+        </li>
+        <li>
+          <div class="prev">
+            <a href="#"><img src="images/special2.png" alt="" title="" /></a>
+          </div>
+          <div class="cont">
+            <a href="#">Honeysuckle Flameless Luminary Refill</a>
+            <div class="prise"><span class="old">$177.00</span>$75.00</div>
+          </div>
+        </li>
+      </ul>
+    </aside>
+    <!-- #specials -->
+    <aside id="newsletter_signup">
+      <h3>Newsletter Signup</h3>
+      <p>Phasellus vel ultricies felis. Duis
+        rhoncus risus eu urna pretium.
+      </p>
+      <%= render 'welcome/subscribe'%>
+      <!--   <form class="newsletter">
+        <input type="email" name="newsletter" class="your_email" value="" placeholder="Enter your email address..."/>
+        <input type="submit" id="submit" value="Subscribe" />
+        </form> -->
+    </aside>
+    <!-- #newsletter_signup -->
+    <aside id="banners">
+      <a id="ban_next" class="next arows" href="#"><span>Next</span></a>
+      <a id="ban_prev" class="prev arows" href="#"><span>Prev</span></a>
+      <h3>Banners</h3>
+      <div class="list_carousel">
+        <ul id="list_banners">
+          <li class="banner">
+            <a href="#">
+              <div class="prev">
+                <img src="images/banner.png" alt="" title="" />
+              </div>
+              <!-- .prev -->
+              <h2>New smells</h2>
+              <p>in the next series</p>
+            </a>
+          </li>
+          <li class="banner">
+            <a href="#">
+              <div class="prev">
+                <img src="images/banner.png" alt="" title="" />
+              </div>
+              <!-- .prev -->
+              <h2>New smells</h2>
+              <p>in the next series</p>
+            </a>
+          </li>
+          <li class="banner">
+            <a href="#">
+              <div class="prev">
+                <img src="images/banner.png" alt="" title="" />
+              </div>
+              <!-- .prev -->
+              <h2>New smells</h2>
+              <p>in the next series</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- .list_carousel -->
+    </aside>
+    <!-- #banners -->
+    <aside id="tags">
+      <h3>Tags</h3>
+      <a class="t1" href="">california</a>
+      <a class="t2" href="">canada</a>
+      <a class="t3" href="">canon</a>
+      <a class="t4" href="">cat</a>
+      <a class="t5" href="">chicago</a>
+      <a class="t6" href="">christmas</a>
+      <a class="t7" href="">mars</a>
+      <a class="t8" href="">church</a>
+      <a class="t9" href="">city</a>
+      <a class="t10" href="">clouds</a>
+      <a class="t11" href="">color</a>
+      <a class="t12" href="">concert</a>
+      <a class="t13" href="">dance</a>
+      <a class="t14" href="">day</a>
+      <a class="t15" href="">dog</a>
+      <a class="t16" href="">england</a>
+      <a class="t17" href="">europe</a>
+    </aside>
+    <!-- #community_poll -->
+  </div>
+  <!-- .sidebar -->
   <div class="clear"></div>
-
-
+  </div><!-- .container_12 -->
+</section>
+<!-- #main -->
+<div class="clear"></div>

@@ -1,8 +1,5 @@
-<% if @like.likeable.class.name == "Rating" %>
-// $("#rating_likes").html("<%= escape_javascript render 'likes/likes', likeable: @like.likeable %>");
-<%# elsif @like.likeable.class.name == "Comment" %>
-$("#rate_<%= @like.likeable.id %>_likes").html("<%= escape_javascript render 'likes/likes', likeable: @like.likeable %>");
-<%elsif @like.likeable.class.name == "Product" %>
+<% if @like.likeable.class.name == "Product" %>
 $("#product_<%= @like.likeable.id %>_likes").html("<%= escape_javascript render 'likes/likes', likeable: @like.likeable %>");
-<% else %>
-<% end %>
+<%else @like.likeable.class.name == "Rating" %>
+$("#rate_<%= @like.likeable.id %>_likes").html("<%= escape_javascript render 'likes/likes', likeable: @like.likeable %>");
+ <% end %>
