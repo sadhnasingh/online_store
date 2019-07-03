@@ -17,7 +17,7 @@
 <%= render partial: 'show_rating', locals: {product: @product}%>
 </div>
 <div id="review-rating">
-  <%= form_for :rating, url: ratings_path ,html: {class: "add_comments"} do |f| %>
+  <%= form_for :rating, url: ratings_path ,html: {class: "add_comments"}, remote: true do |f| %>
   <h4>Write Your Own Review</h4>
   <div class="evaluation">
     <div class="quality">
@@ -74,6 +74,9 @@
   <div class="clear"></div>
   <%= f.hidden_field :product_id, :value=> @product.id %>
   <div class="text_review">
+    <% if current_user.present?%>
+    <%= f.hidden_field :user_id, :value=> current_user.id %>
+    <%end%>
     <%= f.text_area :review %>
     <!-- 	<strong>Review</strong><sup class="surely">*</sup><br/>
       <textarea name="text"></textarea>

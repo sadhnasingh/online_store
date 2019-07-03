@@ -9,7 +9,7 @@ class RatingsController < ApplicationController
 	@product = params[:rating][:product_id]
 	respond_to do |format|
 	  if rating.save!
-	  	format.js 
+	  	format.js { redirect_to product_page_product_path(@product), notice: 'Rating was successfully created.' }
 	      format.html { redirect_to product_page_product_path(@product), notice: 'Rating was successfully created.' }
 	  else
 	  end
